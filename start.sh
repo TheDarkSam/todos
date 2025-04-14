@@ -10,6 +10,7 @@ npm install
 
 # Rodar as migrações do Prisma
 echo "Rodando migrações do Prisma..."
+npx prisma generate
 npx prisma migrate deploy
 
 # Iniciar a aplicação
