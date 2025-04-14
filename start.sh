@@ -1,13 +1,21 @@
 #!/bin/bash
 
-# Instalando as dependências
-echo "Instalando as dependências..."
+# Atualize pacotes
+echo "Atualizando pacotes..."
+sudo apt update && sudo apt upgrade -y
+
+# Instalar Node.js (caso não esteja instalado)
+echo "Instalando Node.js..."
+sudo apt install -y nodejs npm
+
+# Instalar dependências do projeto
+echo "Instalando dependências do projeto..."
 npm install
 
-# Rodando as migrações do Prisma
-echo "Rodando as migrações do Prisma..."
+# Rodar as migrações do Prisma
+echo "Rodando migrações do Prisma..."
 npx prisma migrate deploy
 
-# Iniciando a aplicação
+# Iniciar a aplicação
 echo "Iniciando a aplicação..."
 npm start
